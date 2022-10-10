@@ -18,6 +18,12 @@ class Table:
             for row in self.rows
         ]
 
+    def get_columns_quantity(self) -> int:
+        return len([column.type for column in self.columns])
+
+    def get_all_column_names(self) -> list:
+        return [column.name for column in self.columns]
+
     def add_column(self, name: str, type: int) -> None:
         if name in [column.name for column in self.columns]:
             raise KeyError(f"Column with {name} name is already exists")
