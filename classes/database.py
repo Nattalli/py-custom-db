@@ -1,8 +1,10 @@
 import pickle
 from dataclasses import dataclass
 from classes.table import Table
+import Pyro5.api
 
 
+@Pyro5.api.expose
 @dataclass
 class Database:
     tables: dict
@@ -34,4 +36,4 @@ class Database:
     def import_db(self, path: str):
         with open(f"{path}.pickle", "rb") as file:
             self = pickle.load(file)
-            return self
+            return pickle.load(file)
