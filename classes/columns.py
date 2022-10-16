@@ -16,7 +16,7 @@ class IntColumn:
         return self._value
 
     @value.setter
-    def name(self, value: int) -> None:
+    def value(self, value: int) -> None:
         if isinstance(value, int):
             self._value = value
         else:
@@ -33,7 +33,7 @@ class StrColumn:
         return self._value
 
     @value.setter
-    def name(self, value: str) -> None:
+    def value(self, value: str) -> None:
         if isinstance(value, str):
             self._value = value
         else:
@@ -50,7 +50,7 @@ class CharColumn:
         return self._value
 
     @value.setter
-    def name(self, value: str) -> None:
+    def value(self, value: str) -> None:
         if isinstance(value, str) and len(value) == 1:
             self._value = value
         else:
@@ -67,7 +67,7 @@ class RealColumn:
         return self._value
 
     @value.setter
-    def name(self, value: float) -> None:
+    def value(self, value: float) -> None:
         if isinstance(value, float):
             self._value = value
         else:
@@ -84,7 +84,7 @@ class HTMLColumn:
         return self._value
 
     @value.setter
-    def name(self, value: str) -> None:
+    def value(self, value: str) -> None:
         if isinstance(value, str):
             open_tag = value.count("<")
             close_tag = value.count(">")
@@ -107,7 +107,7 @@ class StrInvlColumn:
         return self._value
 
     @value.setter
-    def name(self, value: list) -> None:
+    def value(self, value: list) -> None:
         if isinstance(value, list) and isinstance(value[0], str) \
                 and isinstance(value[1], str):
             if value[0] > value[1]:
